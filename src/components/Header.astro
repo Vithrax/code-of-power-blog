@@ -1,0 +1,21 @@
+---
+import Theme from './Theme.astro';
+const { pathname } = Astro.url;
+---
+
+<header>
+  <nav class="flex items-center justify-around">
+    <ul class="flex gap-2 items-center justify-center py-2">
+      <li>
+        <a href="/" class={`${pathname === '/' ? 'font-medium' : ''}`}>Home</a>
+      </li>
+      <span>&bull;</span>
+      <li>
+        <a href="/about" class={`${pathname === '/about' ? 'font-medium' : ''}`}
+          >About</a
+        >
+      </li>
+    </ul>
+    <Theme />
+  </nav>
+</header>

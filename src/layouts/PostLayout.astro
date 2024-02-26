@@ -1,0 +1,32 @@
+---
+import type { Post } from '../content/config';
+
+interface Props {
+  frontmatter: Post['data'];
+}
+
+import BaseLayout from './BaseLayout.astro';
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title}>
+  <header class="flex items-center justify-between">
+    <h1 transition:name="test" class="text-2xl font-medium tracking-tight">
+      {frontmatter.title}
+    </h1>
+    <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
+  </header>
+  <p class="text-zinc-500">{frontmatter.description}</p>
+  {
+    frontmatter.image && (
+      <img
+        src={frontmatter.image.url}
+        width="300"
+        alt={frontmatter.image.alt}
+      />
+    )
+  }
+  <article class="prose dark:prose-invert pt-20">
+    <slot />
+  </article>
+</BaseLayout>
