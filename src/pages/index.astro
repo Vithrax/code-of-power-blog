@@ -1,16 +1,25 @@
 ---
+import { getCollection } from 'astro:content';
+
 import Layout from '../layouts/BaseLayout.astro';
-import PostList from '../components/PostList.astro';
+import Logo from '../components/Logo.astro';
+import PostCard from '../components/PostCard.astro';
+
+const allPosts = await getCollection('posts');
 ---
 
 <Layout title="Welcome to Astro.">
-  <header
-    class="flex flex-col sm:flex-row items-start sm:items-center justify-between px-2"
-  >
-    <h1 class="font-extrabold text-5xl tracking-tight">Code of Power</h1>
-    <a href="/about" class="text-xs font-medium hover:underline"
-      >by Adrian Gajdulewicz</a
-    >
-  </header>
-  <PostList />
+  <Logo />
+  <ul class="shadow mt-6 space-y-2">
+    {
+      allPosts.map((post) => (
+        <PostCard
+          title={post.data.title}
+          date={post.data.pubDate}
+          description={post.data.description}
+          slug={post.slug}
+        />
+      ))
+    }
+  </ul>
 </Layout>

@@ -2,12 +2,14 @@
 import { ViewTransitions } from 'astro:transitions';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { cn } from '../lib/utils';
 
 interface Props {
   title: string;
+  className?: string;
 }
 
-const { title } = Astro.props;
+const { title, className } = Astro.props;
 ---
 
 <!doctype html>
@@ -26,7 +28,7 @@ const { title } = Astro.props;
   </head>
   <body class="grid grid-rows-[auto,1fr,auto] antialiased h-dvh">
     <Header />
-    <main class="max-w-xl mx-auto pt-8">
+    <main class={cn('w-full sm:w-[36rem] mx-auto pt-8', className)}>
       <slot />
     </main>
     <Footer />

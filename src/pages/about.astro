@@ -1,17 +1,24 @@
 ---
 import Layout from '../layouts/BaseLayout.astro';
+import Logo from '../components/Logo.astro';
 ---
 
 <Layout title="About me">
-  <header
-    class="flex flex-col sm:flex-row items-start sm:items-center justify-between px-2"
-  >
-    <h1 class="font-extrabold text-5xl tracking-tight">Code of Power</h1>
-    <a href="/about" class="text-xs font-medium hover:underline"
-      >by Adrian Gajdulewicz</a
-    >
-  </header>
+  <Logo />
   <div class="px-2">
-    <p class="pt-8">My small personal space to pour out some thoughts</p>
+    <article class="pt-8 prose">
+      <blockquote>
+        My small, personal space to pour out some thoughts
+      </blockquote>
+      <h3>Hello!</h3>
+      <p>
+        My name is Adrian and i was born in 1993. I'm a father of 2 boys, IT
+        engineer and hobby programist and great cook :)
+      </p>
+      <p>
+        Feel free to contact me on socials, you will find them in the footer.
+      </p>
+      <p>Take Care! <br />Adrian</p>
+    </article>
   </div>
 </Layout>
