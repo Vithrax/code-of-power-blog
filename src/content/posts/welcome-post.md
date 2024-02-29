@@ -30,10 +30,3 @@ I just want to test some MD elements, see if there will be need to implement MDX
 1. code blocks
 2. quotes
 3. highlight
-
-```js
-const welcome = (name: string) => {
-  console.log(`Hi, ${name}!`);
-  console.log('Testing code blocks');
-};
-```
