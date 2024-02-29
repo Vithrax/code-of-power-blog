@@ -28,7 +28,7 @@ import { cn } from "../lib/utils";
           <a
             href="/about"
             class={cn("transition-all", {
-              "font-semibold": pathname === "/about",
+              "font-semibold": pathname.startsWith("/about"),
             })}>About</a
           >
         </li>
@@ -36,4 +36,3 @@ import { cn } from "../lib/utils";
     </div>
   </nav>
 </header>
-<p>{pathname}</p>
