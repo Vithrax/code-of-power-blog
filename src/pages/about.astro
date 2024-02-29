@@ -3,7 +3,15 @@ import Layout from '../layouts/BaseLayout.astro';
 ---
 
 <Layout title="About me">
-  <h1 class="text-2xl font-medium">Code of power</h1>
-  <p class="text-zinc-500">A blog by Adrian Gajdulewicz</p>
-  <p class="pt-8">My small personal space to pour out some thoughts</p>
+  <header
+    class="flex flex-col sm:flex-row items-start sm:items-center justify-between px-2"
+  >
+    <h1 class="font-extrabold text-5xl tracking-tight">Code of Power</h1>
+    <a href="/about" class="text-xs font-medium hover:underline"
+      >by Adrian Gajdulewicz</a
+    >
+  </header>
+  <div class="px-2">
+    <p class="pt-8">My small personal space to pour out some thoughts</p>
+  </div>
 </Layout>
