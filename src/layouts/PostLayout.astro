@@ -12,7 +12,10 @@ const { frontmatter } = Astro.props;
 <BaseLayout title={frontmatter.title}>
   <div class="px-4">
     <header class="flex flex-col items-start justify-between">
-      <h1 transition:name="test" class="text-2xl font-bold tracking-tight">
+      <h1
+        transition:name={`post-${frontmatter.title}`}
+        class="text-2xl font-bold tracking-tight"
+      >
         {frontmatter.title}
       </h1>
       <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
