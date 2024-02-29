@@ -1,6 +1,6 @@
-import { z, defineCollection, type Render } from 'astro:content';
+import { z, defineCollection, type Render } from "astro:content";
 
-const postSchema = z.object({
+export const postSchema = z.object({
   title: z.string(),
   pubDate: z.date(),
   description: z.string(),
@@ -14,7 +14,7 @@ const postSchema = z.object({
 });
 
 const postsCollection = defineCollection({
-  type: 'content',
+  type: "content",
   schema: postSchema,
 });
 
@@ -27,6 +27,6 @@ export type Post = {
   id: string;
   slug: string;
   body: string;
-  collection: 'pages';
+  collection: "pages";
   data: z.infer<typeof postSchema>;
-} & { render(): Render['.md'] };
+} & { render(): Render[".md"] };

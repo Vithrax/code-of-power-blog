@@ -7,10 +7,10 @@ interface Props {
 }
 
 const { description, title, date, slug } = Astro.props;
-const formattedDate = date.toLocaleDateString('en-US', {
-  day: '2-digit',
-  month: 'short',
-  year: 'numeric',
+const formattedDate = date.toLocaleDateString("en-US", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
 });
 ---
 
@@ -21,12 +21,14 @@ const formattedDate = date.toLocaleDateString('en-US', {
         class="flex flex-col sm:flex-row items-start sm:items-center justify-between"
       >
         <h2
-          transition:name={`post-${title}`}
+          transition:name={`post-title-${title}`}
           class="text-2xl truncate font-bold tracking-tight"
         >
           {title}
         </h2>
-        <date class="text-sm">{formattedDate}</date>
+        <time class="text-sm" transition:name={`post-date-${title}`}
+          >{formattedDate}</time
+        >
       </header>
       <p class="text-zinc-500 mt-4 leading-5 line-clamp-2">{description}</p>
     </a>
