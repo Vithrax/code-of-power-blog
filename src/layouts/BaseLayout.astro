@@ -26,7 +26,9 @@ const { title, className } = Astro.props;
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body class="grid grid-rows-[auto,1fr,auto] antialiased h-dvh">
+  <body
+    class="grid grid-rows-[auto,1fr,auto] antialiased h-[98dvh] overflow-scroll"
+  >
     <Header />
     <main class={cn('w-full sm:w-[36rem] mx-auto pt-8', className)}>
       <slot />
