@@ -8,6 +8,7 @@ export default defineConfig({
   output: 'hybrid',
   adapter: vercel({
     functionPerRoute: false,
+    isr: true,
   }),
   prefetch: {
     prefetchAll: true,
