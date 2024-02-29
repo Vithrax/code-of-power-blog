@@ -1,28 +1,39 @@
 ---
 const { pathname } = Astro.url;
 import { cn } from '../lib/utils';
+console.log(pathname);
 ---
 
 <header class="bg-black py-8 text-white text-lg">
-  <nav class="flex items-center justify-around">
-    <ul class="flex gap-2 items-center justify-center py-2">
-      <li>
-        <a
-          href="/"
-          class={cn('transition-all', {
-            'font-medium border-b-2': pathname === '/',
-          })}>Home</a
+  <nav class="sm:w-[36rem] mx-auto">
+    <div class="flex items-center justify-between px-4">
+      <div class="flex flex-col items-start justify-between px-2">
+        <h1 class="font-extrabold font-logo leading-6 text-4xl">
+          Code of Power
+        </h1>
+        <a href="/about" class="text-xs pl-4 font-medium hover:underline"
+          >by Adrian Gajdulewicz</a
         >
-      </li>
-      <span>&bull;</span>
-      <li>
-        <a
-          href="/about"
-          class={cn('transition-all', {
-            'font-medium border-b-2': pathname === '/about',
-          })}>About</a
-        >
-      </li>
-    </ul>
+      </div>
+
+      <ul class="flex gap-4 items-center justify-center py-2 text-base">
+        <li>
+          <a
+            href="/"
+            class={cn('transition-all', {
+              'font-semibold': pathname === '/',
+            })}>Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="/about"
+            class={cn('transition-all', {
+              'font-semibold': pathname === '/about',
+            })}>About</a
+          >
+        </li>
+      </ul>
+    </div>
   </nav>
 </header>
