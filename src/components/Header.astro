@@ -1,17 +1,26 @@
 ---
 const { pathname } = Astro.url;
+import { cn } from '../lib/utils';
 ---
 
 <header class="bg-black py-8 text-white text-lg">
   <nav class="flex items-center justify-around">
     <ul class="flex gap-2 items-center justify-center py-2">
       <li>
-        <a href="/" class={`${pathname === '/' ? 'font-medium' : ''}`}>Home</a>
+        <a
+          href="/"
+          class={cn('transition-all', {
+            'font-medium border-b-2': pathname === '/',
+          })}>Home</a
+        >
       </li>
       <span>&bull;</span>
       <li>
-        <a href="/about" class={`${pathname === '/about' ? 'font-medium' : ''}`}
-          >About</a
+        <a
+          href="/about"
+          class={cn('transition-all', {
+            'font-medium border-b-2': pathname === '/about',
+          })}>About</a
         >
       </li>
     </ul>

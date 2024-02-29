@@ -7,11 +7,13 @@ import { cn } from '../lib/utils';
 import '@fontsource/bebas-neue';
 
 interface Props {
-  title: string;
+  title?: string;
   className?: string;
 }
 
 const { title, className } = Astro.props;
+
+const pageTitle = title ? `CoP | ${title}` : 'Code of Power';
 ---
 
 <!doctype html>
@@ -25,7 +27,7 @@ const { title, className } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{pageTitle}</title>
     <ViewTransitions />
   </head>
   <body
